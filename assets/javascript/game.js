@@ -2,7 +2,6 @@
 // //Array of Words from Star Trek 
  var wordBank = ["trek", "star", "stun", "fleet", "borg","delta"]
 
-// //Display Word Section
 
 // //Random word pick
  var wordRandom = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -31,18 +30,22 @@ var guessCt = 0
  console.log("Max Guess = Length of Word; " + guessMax)
 
 //Display Word
-
-
+    //Hide Word with dashes
+    var noWord = wordRandom.replace(/[a-z]/g, "- ") 
+    console.log(noWord)
+//
+//Create div to show word/dashes
 var wordWindow = document.createElement("div");
-
-textnode = document.createTextNode(wordRandom);
-
+//place data from string in node
+textnode = document.createTextNode(noWord);
+//move node to div
 wordWindow.appendChild(textnode);
-
+//attach JS div to HTML div
 document.getElementById("showWord").appendChild(wordWindow);
 
 
 // var guessMax = function randomWord (){
+
 
 //for (var i = 0; i < wordBank.length; i++) {
 //    console.log(wordBank[i].length);
